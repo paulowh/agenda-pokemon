@@ -1,0 +1,27 @@
+## Visual Studio Temp Files
+.vs/
+[Bb]in/
+[Ob]j/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## NuGet Packages
+packages/
+*.nuget.props
+*.nuget.targets
+
+## Build Results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+## JSON Data (Opcional)
+# Se você quer que os alunos te enviem o JSON separadamente e não subam no Git:
+# pokemons.json
+
+## Outros
+*.log
+*.cache

@@ -120,5 +120,30 @@ namespace pokemon_agenda
 
         }
 
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            //pegar a linha selecionada!
+
+            //                           (ConverteParaoTipo)pegar linha selecionada do DGV
+            Pokemon PokemonSelecionado = (Pokemon)dgvListaPokemon.CurrentRow.DataBoundItem;
+            //char = "a"
+            //string = "texto diverso"
+            //int = 57
+            //double = 32.65
+            //var 
+
+
+            //PokemonSelecionado.fnDescricao();
+
+
+            FormDetalhesPokemon formD = new FormDetalhesPokemon();
+            formD.pokemonRecebido = PokemonSelecionado;
+
+            // ShowDialog() 'forço' usuario a focar na nova tela
+            // Show() usuario pode usar qualquer tela ao mesmo tempo
+            formD.ShowDialog();
+
+
+        }
     }
 }

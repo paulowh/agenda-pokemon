@@ -12,9 +12,22 @@ namespace pokemon_agenda
 {
     public partial class FormDetalhesPokemon : Form
     {
+        public Pokemon pokemonRecebido { get; set; }
+
         public FormDetalhesPokemon()
         {
             InitializeComponent();
+
+            lbNome.Text = pokemonRecebido.Nome;
+            lbTipo.Text = pokemonRecebido.Tipo;
+            lbNivel.Text = pokemonRecebido.Nivel.ToString();
+
+
+        }
+
+        private void FormDetalhesPokemon_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

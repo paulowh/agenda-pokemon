@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAjuda = new System.Windows.Forms.Button();
             this.dgvListaPokemon = new System.Windows.Forms.DataGridView();
+            this.btnVisualizar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numNivel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -204,16 +205,28 @@
             // 
             this.dgvListaPokemon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaPokemon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvListaPokemon.Location = new System.Drawing.Point(349, 107);
+            this.dgvListaPokemon.Location = new System.Drawing.Point(354, 107);
             this.dgvListaPokemon.Name = "dgvListaPokemon";
             this.dgvListaPokemon.Size = new System.Drawing.Size(658, 199);
             this.dgvListaPokemon.TabIndex = 4;
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizar.Location = new System.Drawing.Point(354, 312);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(225, 32);
+            this.btnVisualizar.TabIndex = 5;
+            this.btnVisualizar.Text = "Visualizar Detalhes";
+            this.btnVisualizar.UseVisualStyleBackColor = true;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // FmCadastroPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 410);
+            this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.dgvListaPokemon);
             this.Controls.Add(this.btnAjuda);
             this.Controls.Add(this.groupBox1);
@@ -248,6 +261,7 @@
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Button btnAjuda;
         private System.Windows.Forms.DataGridView dgvListaPokemon;
+        private System.Windows.Forms.Button btnVisualizar;
     }
 }
 

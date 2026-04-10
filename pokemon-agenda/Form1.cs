@@ -60,8 +60,8 @@ namespace pokemon_agenda
 
             listaPokemon.Add(poke);
 
-            poke.fnDescricao();
-
+            //poke.fnDescricao();
+            //MessageBox.Show(poke.fnLinkImg());
 
             //MessageBox.Show($"o Pokémon {nomePokemon} do tipo {tipoPokemon} " +
             //    $"foi cadastrado com o nivel {nivelPokemon}");
@@ -122,28 +122,42 @@ namespace pokemon_agenda
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
-            //pegar a linha selecionada!
+            //valida se a linha foi selecionada
+            if (dgvListaPokemon.CurrentRow != null) 
+            { 
+                //                           (ConverteParaoTipo)pegar linha selecionada do DGV
+                Pokemon PokemonSelecionado = (Pokemon)dgvListaPokemon.CurrentRow.DataBoundItem;
 
-            //                           (ConverteParaoTipo)pegar linha selecionada do DGV
-            Pokemon PokemonSelecionado = (Pokemon)dgvListaPokemon.CurrentRow.DataBoundItem;
-            //char = "a"
-            //string = "texto diverso"
-            //int = 57
-            //double = 32.65
-            //var 
+                //PokemonSelecionado.fnDescricao();
+
+                FormDetalhesPokemon formD = new FormDetalhesPokemon();
+                formD.pokemonRecebido = PokemonSelecionado;
+
+                // ShowDialog() 'forço' usuario a focar na nova tela
+                // Show() usuario pode usar qualquer tela ao mesmo tempo
+                formD.ShowDialog();
+
+            } else
+            {
+                MessageBox.Show("Selecione um dos Pokemon na lista");
+            }
+        }
+
+        private void btnTreinar_Click(object sender, EventArgs e)
+        {
+            if (dgvListaPokemon.CurrentRow != null)
+            {
+                Pokemon pokemonParaTreinar = (Pokemon)dgvListaPokemon.CurrentRow.DataBoundItem;
+
+                pokemonParaTreinar.fnTreinar();
+
+                dgvListaPokemon.Refresh();
+
+                MessageBox.Show($"o Pokemon {pokemonParaTreinar.Nome} subiu 1 nivel", "Alerta de treinamento");
 
 
-            //PokemonSelecionado.fnDescricao();
 
-
-            FormDetalhesPokemon formD = new FormDetalhesPokemon();
-            formD.pokemonRecebido = PokemonSelecionado;
-
-            // ShowDialog() 'forço' usuario a focar na nova tela
-            // Show() usuario pode usar qualquer tela ao mesmo tempo
-            formD.ShowDialog();
-
-
+            }
         }
     }
 }

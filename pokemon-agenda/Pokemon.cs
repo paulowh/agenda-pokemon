@@ -71,5 +71,22 @@ namespace pokemon_agenda
                 $"Nivel: {Nivel}, Vida: {Vida}, Dano: {Dano}");
         }
 
+
+        public string fnLinkImg()
+        {
+
+            string nomeTratado = Nome.Replace(" ", "-").Replace(".", "").ToLower();
+
+            return $"https://img.pokemondb.net/artwork/{nomeTratado}.jpg";
+        }
+
+        public void fnTreinar()
+        {
+            Nivel++;
+
+            Vida = Nivel * 70;
+            Dano = Nivel * 15;
+        }
+
     }
 }
